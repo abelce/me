@@ -1,0 +1,26 @@
+.home {
+  background: #000000;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  :global {
+    .container {
+      width: 400px;
+      align-self: center;
+      text-align: center;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    .links {
+      list-style: none;
+      > li {
+        height: 36px;
+        line-height: 36px;
+        a {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
