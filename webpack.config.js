@@ -14,7 +14,7 @@ const config = {
     disableHostCheck: true,
     host: "0.0.0.0",
     hot: true,
-    port: 3010,
+    port: 3011,
     contentBase: __dirname + "/dist",
     historyApiFallback: true,
   },

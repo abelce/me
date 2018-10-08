@@ -1,26 +1,76 @@
 .home {
-  background: #000000;
   height: 100%;
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
+  // position: relative;
+  ::after {
+    content: '';
+    clear: both;
+  }
+}
+
+.aside {
+  width: 320px;
+  height: 100%;
+  float: left;
+  background: #ffffff;
   :global {
-    .container {
-      width: 400px;
-      align-self: center;
+    .pic {
       text-align: center;
-      @media screen and (max-width: 767px) {
-        width: 100%;
+      padding: 40px 0;
+      border-bottom: 1px solid #000000;
+       > img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+       }
+    }
+    section {
+      padding-left: 24px;
+      margin-top: 8px;
+      ul {
+        list-style: none;
+        padding-left: 24px;
+        font-size: 18px;
       }
     }
-    .links {
-      list-style: none;
-      > li {
-        height: 36px;
-        line-height: 36px;
-        a {
-          color: #ffffff;
-        }
-      }
+  }
+}
+.container {
+  background: #f0f2f5;
+  width: 100%;
+  height: 100%;
+  margin-left: 320px;
+  align-self: center;
+  position: relative;
+}
+.links {
+  width: 400px;
+  list-style: none;
+  padding: 24px;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+  > li {
+    height: 36px;
+    line-height: 36px;
+    a {
+      // color: #ffffff;
     }
+  }
+}
+footer {
+  position: absolute;
+  padding: 24px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.info {
+  font-size: 14px;
+  // text-align: left;
+  .name {
+    margin-top: 8px;
   }
 }
