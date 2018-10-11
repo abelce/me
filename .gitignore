@@ -7,6 +7,7 @@ npm-debug.log
 *.mo
 *.orig
 /oldPro/
+/node_modules/
 .idea/
 package-lock.json
 /**/*.scss.d.ts
