@@ -36,11 +36,12 @@ const Links = [
     id: 'resume',
     label: 'resume',
     link: 'https://www.linkedin.com/in/%E6%AD%A3%E9%9B%84-%E5%94%90-312323148/',
-  }, {
-    id: 'others',
-    label: '其他(业余时间写的东西)',
-    link: '//tangzhengxiong.com'
-  }
+  }, 
+  // {
+  //   id: 'others',
+  //   label: '其他(业余时间写的东西)',
+  //   link: '//admin.tangzhengxiong.com'
+  // }
 ]
 
 const kills = [
