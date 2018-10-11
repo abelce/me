@@ -33,6 +33,10 @@ const Links = [
     label: 'github',
     link: 'https://github.com/abelce',
   }, {
+    id: 'resume',
+    label: 'resume',
+    link: 'https://www.linkedin.com/in/%E6%AD%A3%E9%9B%84-%E5%94%90-312323148/',
+  }, {
     id: 'others',
     label: '其他(业余时间写的东西)',
     link: '//tangzhengxiong.com'
@@ -103,7 +107,11 @@ class Home extends React.Component {
             {
               Links.map(item => (
                 <li>
-                   <a href={item.link} target="_blank">{item.label}</a>
+                   <a href={item.link} target="_blank">
+                     <div className="link">
+                        {item.label}
+                     </div>
+                   </a>
                 </li>
               ))
             }
