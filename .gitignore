@@ -1,4 +1,3 @@
-/distTmp/
 /.vscode/
 npm-debug.log
 .DS_Store
@@ -10,4 +9,4 @@ npm-debug.log
 .idea/
 package-lock.json
 /**/*.scss.d.ts
-/dist
+/dist/
