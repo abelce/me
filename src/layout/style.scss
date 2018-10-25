@@ -1,0 +1,48 @@
+@import '../assets/style/mixins';
+
+.layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  // background: var(--base-bg-color);
+}
+
+.slider {
+  width: $sliderWidth;
+  background: #222;
+  color: var(--base-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  :global {
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        height: 60px;
+        line-height: 60px;
+        > a {
+          text-decoration: none;
+          color: var(--base-color);
+        }
+      }
+    }
+    footer {
+      position: static;
+      padding: 0;
+    }
+  }
+}
+.main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  // color: #ffffff;
+  > div {
+    flex: 1;
+    height: 100%;
+    padding: 40px;
+    margin: 0 60px;
+  }
+}

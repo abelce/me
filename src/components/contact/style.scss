@@ -1,0 +1,84 @@
+.home {
+  height: 100%;
+  // display: flex;
+  // justify-content: center;
+  // position: relative;
+  ::after {
+    content: '';
+    clear: both;
+  }
+}
+
+.aside {
+  width: 320px;
+  height: 100%;
+  float: left;
+  background: #ffffff;
+  :global {
+    .pic {
+      text-align: center;
+      padding: 40px 0;
+      border-bottom: 1px solid #000000;
+       > img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+       }
+    }
+    section {
+      padding-left: 24px;
+      margin-top: 8px;
+      ul {
+        list-style: none;
+        padding-left: 24px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+.container {
+  background: #f0f2f5;
+  width: 100%;
+  height: 100%;
+  margin-left: 320px;
+  align-self: center;
+  position: relative;
+}
+.links {
+  width: 400px;
+  list-style: none;
+  padding: 24px;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+  > li {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 16px;
+    background: #ffffff;
+    display: inline-block;
+    margin-right: 24px;
+    margin-top: 24px;
+    a {
+      font-size: 24px;
+      text-decoration: none;
+    }
+  }
+  .link {
+  }
+}
+footer {
+  position: absolute;
+  padding: 24px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.info {
+  font-size: 14px;
+  // text-align: left;
+  .name {
+    margin-top: 8px;
+  }
+}
