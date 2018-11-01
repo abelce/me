@@ -35,7 +35,7 @@ const Links = [
   }, {
     id: 'resume',
     label: 'resume',
-    link: 'https://www.linkedin.com/in/%E6%AD%A3%E9%9B%84-%E5%94%90-312323148/',
+    link: 'https://drive.google.com/file/d/1pqgmvYou99Cj35AOa10vFHGxA_zGdg8o/view?ths=true',
   }, 
   // {
   //   id: 'others',

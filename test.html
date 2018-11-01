@@ -98,5 +98,43 @@
         <div class="left02">left</div>
         <div class="right02">right</div>
     </div>
+    <script>
+        var tree = {
+            left: {
+                left: { value: 3 },
+                right: { value: 4 },
+                value: 1
+            },
+            right: {
+                left: { value: 5 },
+                right: { value: 6 },
+                value: 2
+            },
+            value: 0
+        }
+
+            function test(node) {
+                if ('left' in node) {
+                    test(node.left);
+                } 
+                console.log(node.value);
+                if ('right' in node) {
+                    test(node.right);
+                }
+            }
+
+
+      let tmp = [tree]
+      while(tmp.length > 0) {
+          if ('left' in tmp[0]) {
+              tmp.push(tmp[0].left);
+          }
+          if ('right' in tmp[0]) {
+              tmp.push(tmp[0].right);
+          }
+          console.log(tmp[0].value);
+          tmp.splice(0, 1);
+      }
+    </script>
 </body>
 </html>
