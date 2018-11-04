@@ -41,21 +41,23 @@ const config = {
         test: /en_US.po$/,
         loader: 'expose-loader?en_US!json-loader!po-loader',
       },
-      // {
-      //   test: /\.jsx$|\.js$|\.tsx$|\.ts$/,
-      //   include: /src/,
-      //   exclude: [/node_modules/, /src\/assets/],
-      //   enforce: 'pre',
-      //   use: [{
-      //       loader: 'eslint-loader',
-      //       options: { fix: true }
-      //   }]
-      // },
       {
         test: /\.jsx$|\.js$|\.tsx$|\.ts$/,
         include: /src/,
         exclude: [/node_modules/, /src\/assets/],
-        loader: 'babel-loader',
+        enforce: 'pre',
+        use: [
+          {
+            loader: 'eslint-loader',
+            options: { fix: true },
+          },
+        ],
+      },
+      {
+        test: /\.jsx$|\.js$|\.tsx$|\.ts$/,
+        include: /src/,
+        exclude: [/node_modules/, /src\/assets/],
+        loader: ['babel-loader', 'eslint-loader'],
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg|pdf|jpg)$/,

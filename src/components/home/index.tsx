@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as Style from './style.scss';
-import cn from 'classnames';
 
 const Links = [
   {
