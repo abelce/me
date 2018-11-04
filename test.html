@@ -99,42 +99,92 @@
         <div class="right02">right</div>
     </div>
     <script>
-        var tree = {
-            left: {
-                left: { value: 3 },
-                right: { value: 4 },
-                value: 1
-            },
-            right: {
-                left: { value: 5 },
-                right: { value: 6 },
-                value: 2
-            },
-            value: 0
-        }
+    //     var tree = {
+    //         left: {
+    //             left: { value: 3 },
+    //             right: { value: 4 },
+    //             value: 1
+    //         },
+    //         right: {
+    //             left: { value: 5 },
+    //             right: { value: 6 },
+    //             value: 2
+    //         },
+    //         value: 0
+    //     }
 
-            function test(node) {
-                if ('left' in node) {
-                    test(node.left);
-                } 
-                console.log(node.value);
-                if ('right' in node) {
-                    test(node.right);
-                }
-            }
+    //         function test(node) {
+    //             if ('left' in node) {
+    //                 test(node.left);
+    //             } 
+    //             console.log(node.value);
+    //             if ('right' in node) {
+    //                 test(node.right);
+    //             }
+    //         }
 
 
-      let tmp = [tree]
-      while(tmp.length > 0) {
-          if ('left' in tmp[0]) {
-              tmp.push(tmp[0].left);
+    //   let tmp = [tree]
+    //   while(tmp.length > 0) {
+    //       if ('left' in tmp[0]) {
+    //           tmp.push(tmp[0].left);
+    //       }
+    //       if ('right' in tmp[0]) {
+    //           tmp.push(tmp[0].right);
+    //       }
+    //       console.log(tmp[0].value);
+    //       tmp.splice(0, 1);
+    //   }
+
+
+
+
+      function longSeq(input1, input2, len1, len2) {
+          let T = [];
+          for (let i = 0; i < len1; i++) {
+              T[i] = [];
+              for (let j = 0; j < len2; j++) {
+                  if (i === 0 || j === 0) {
+                      T[i][j] = 0;
+                      continue;
+                  }
+                  if (input1[i] === input2[j]) {
+                      T[i][j] = T[i - 1][j - 1] + 1;
+                  } else {
+                    T[i][j] = Math.max(T[i - 1][j], T[i][j - 1]);
+                  }
+              }
           }
-          if ('right' in tmp[0]) {
-              tmp.push(tmp[0].right);
-          }
-          console.log(tmp[0].value);
-          tmp.splice(0, 1);
+
+          return findValue(input1, input2, len1, len2, T);
       }
+
+      function findValue(input1, input2, len1, len2, T) {
+          let i = len1 - 1;
+          let j = len2 - 1;
+          let result = [];
+          while (i > 0 && j > 0) {
+              if (T[i][j] === T[i - 1][j - 1] + 1) {
+                  result.unshift(input1[i]);
+                  i--;
+                  j--;
+              } else {
+                  if (T[i - 1][j] >= T[i][j - 1]) {
+                      i--;
+                  } else  {
+                      j--;
+                  }
+              }
+          }
+          return result;
+      }
+
+      var input2 = ["","a","b","c","a","d","f"],
+	input1 = ["","a","c","b","a","d"],
+	n1 = input1.length,
+	n2 = input2.length;
+
+    console.log(longSeq(input1,input2,n1,n2));
     </script>
 </body>
 </html>

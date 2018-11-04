@@ -1,3 +1,5 @@
+$colors: #FFCCCC #FF6666 #99CC66 #FF9900 #0000CC #CC99CC;
+
 .home {
   height: 100%;
   // display: flex;
@@ -17,7 +19,7 @@
   :global {
     .pic {
       text-align: center;
-      padding: 40px 0;
+      padding: 20px 0 40px 0;
       border-bottom: 1px solid #000000;
        > img {
         width: 120px;
@@ -54,7 +56,6 @@
   > li {
     height: 60px;
     line-height: 60px;
-    padding: 0 16px;
     background: #ffffff;
     display: inline-block;
     margin-right: 24px;
@@ -64,7 +65,14 @@
       text-decoration: none;
     }
   }
-  .link {
+  @for $i from 1 through length($colors) {
+    .link#{$i} {
+      padding: 0 16px;
+      &:hover {
+        background: nth($colors, $i);
+        color: #ffffff
+      }
+    }
   }
 }
 footer {
@@ -77,8 +85,16 @@ footer {
 
 .info {
   font-size: 14px;
-  // text-align: left;
-  .name {
-    margin-top: 8px;
+  :global {
+    .name {
+      margin-top: 8px;
+      font-size: 36px;
+      height: 48px;
+      line-height: 48px;
+    }
+    .item {
+      height: 24px;
+      line-height: 24px;
+    }
   }
 }

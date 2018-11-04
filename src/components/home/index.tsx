@@ -1,27 +1,6 @@
 import * as React from 'react';
-import 'css-doodle';
 import * as Style from './style';
-
-const BackGD = () => {
-  return (
-    <div className={Style.backgd} dangerouslySetInnerHTML={{__html: `
-        <css-doodle>
-        :doodle {
-          @grid: 20 / 100vmax;
-          background: #0a0c27;
-          font-family: sans-serif;
-        }
-        :after {
-          content: @hex(@rand(0x2500, 0x257f));
-          color: hsla(@r(360), 70%, 70%, @r(.9));
-          font-size: 5vmax;
-        }
-      </css-doodle>`
-    }}>
-    </div>
-  )
-}
-
+import cn from 'classnames';
 
 const Links = [
   {
@@ -36,13 +15,8 @@ const Links = [
     id: 'resume',
     label: 'resume',
     link: 'https://drive.google.com/file/d/1pqgmvYou99Cj35AOa10vFHGxA_zGdg8o/view?ths=true',
-  }, 
-  // {
-  //   id: 'others',
-  //   label: '其他(业余时间写的东西)',
-  //   link: '//admin.tangzhengxiong.com'
-  // }
-]
+  },
+];
 
 const kills = [
   'javasctipt',
@@ -54,12 +28,12 @@ const kills = [
   'canvas',
   'cornerstone',
   'webpack',
-]
+];
 
 const extend = [
   'golang',
   'docker'
-]
+];
 
 class Home extends React.Component {
   render() {
@@ -67,19 +41,14 @@ class Home extends React.Component {
       <div className={Style.home}>
         <aside className={Style.aside}>
           <div className="pic">
-            <img src="http://static.tangzhengxiong.com/67c0029c-74e4-4f4b-843a-f559e56d878c"/>
             <div className={Style.info}>
-              <div className="name">唐正雄 abelce</div>
-              <div>上海第二工业大学-软件工程</div>
-              <div>GraduationTime: 2016.7</div>
-              <div>Tel: 13683454649</div>
-              <div>Weichat: tzx1061225829</div>
-              <div>QQ: 1061225829</div>
-              <div>Email: tzx1061225829@gmail.com</div>
+              <h1 className="name">Abelce</h1>
+              {/* <div className="item">QQ: 1061225829</div> */}
+              <div className="item">Email: tzx1061225829@gmail.com</div>
             </div>
           </div>
           <section>
-            <h5>技术栈(实际上线)</h5>
+            <h5>技术栈</h5>
             <ul>
               {
                 kills.map(kill => (
@@ -106,10 +75,10 @@ class Home extends React.Component {
         <div className={Style.container}>
           <ul className={Style.links}>
             {
-              Links.map(item => (
+              Links.map((item, index) => (
                 <li>
                    <a href={item.link} target="_blank">
-                     <div className="link">
+                     <div className={Style[`link${index + 1}`]}>
                         {item.label}
                      </div>
                    </a>
@@ -118,7 +87,6 @@ class Home extends React.Component {
             }
           </ul>
           <footer>
-            <p>coding...</p>
           </footer>
         </div>
       </div>
