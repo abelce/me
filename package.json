@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "export NODE_ENV=development && webpack-dev-server",
     "build": "export NODE_ENV=production && rm -rf dist  && webpack --config webpack.config.js",
-    "eslint": "eslint --ext .tsx .ts src"
+    "eslint": "eslint src --ext .tsx --cache --fix"
   },
   "husky": {
     "hooks": {
